@@ -1,9 +1,12 @@
 [submodule "odoo"]
 	path = odoo
 	url = https://github.com/odoo/odoo.git
+	branch = 15.0
 [submodule "custom-addons/odoo-brasil"]
 	path = custom-addons/odoo-brasil
 	url = https://github.com/Trust-Code/odoo-brasil.git
+	branch = 15.0
 [submodule "custom-addons/odoo-apps"]
 	path = custom-addons/odoo-apps
 	url = https://github.com/Code-137/odoo-apps
+	branch = 15.0
