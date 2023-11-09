@@ -43,9 +43,7 @@ do_start () {
 
 do_stop () {
     echo -n "Stopping ${DESC}: "
-
-    start-stop-daemon --stop --oknodo --user ${USER} --name ${NAME} \
-    --pidfile $PIDFILE --retry 3
+    start-stop-daemon --stop --quiet --pidfile $PIDFILE --oknodo
 
     echo "${NAME}."
 }

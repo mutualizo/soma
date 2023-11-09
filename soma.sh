@@ -26,18 +26,17 @@ pip3 install -r /opt/soma/odoo/requirements.txt
 
 pip3 install -r /opt/soma/custom-addons/l10n-brazil/requirements.txt
 
-pip3 install -r /opt/soma/custom-addons/odoo-brasil/requirements.txt
-
-pip3 install -r /opt/soma/custom-addons/odoo-apps/requirements.txt
-
 sudo snap install dbeaver-ce
 
 sudo cp /opt/soma/init/odoo /etc/init.d/
 
 sudo chmod +x /etc/init.d/odoo
 
-update-rc.d odoo defaults
+sudo update-rc.d odoo defaults
 
-mkdir /opt/soma/log
+if [ ! -d /opt/soma/log ];
+then
+    mkdir /opt/soma/log
+fi
 
 sudo service odoo start
