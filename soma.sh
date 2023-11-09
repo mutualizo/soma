@@ -26,8 +26,6 @@ pip3 install -r /opt/soma/odoo/requirements.txt
 
 pip3 install -r /opt/soma/custom-addons/l10n-brazil/requirements.txt
 
-sudo snap install dbeaver-ce
-
 sudo cp /opt/soma/init/odoo /etc/init.d/
 
 sudo chmod +x /etc/init.d/odoo
