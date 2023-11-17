@@ -18,7 +18,7 @@ NAME=odoo
 DESC="odoo by soma"
 CONFIG=/opt/soma/init/odoo.conf
 LOGFILE=/opt/soma/log/odoo.log
-USER=odoo
+USER=ubuntu
 PIDFILE=/var/run/${NAME}.pid
 
 test -x ${DAEMON} || exit 0
