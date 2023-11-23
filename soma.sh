@@ -24,6 +24,8 @@ pip3 install wheel
 
 pip3 install -r /opt/soma/odoo/requirements.txt
 
+sudo snap install dbeaver-ce
+
 sudo cp /opt/soma/init/soma /etc/init.d/
 
 sudo chmod +x /etc/init.d/soma
