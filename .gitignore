@@ -9,4 +9,5 @@ __pycache__/
 *~
 log/*
 soma.sh
-init/*
+init/soma
+init/soma.conf
