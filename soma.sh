@@ -24,19 +24,15 @@ pip3 install wheel
 
 pip3 install -r /opt/soma/odoo/requirements.txt
 
-pip3 install -r /opt/soma/custom-addons/l10n-brazil/requirements.txt
+sudo cp /opt/soma/init/soma /etc/init.d/
 
-sudo snap install dbeaver-ce
+sudo chmod +x /etc/init.d/soma
 
-sudo cp /opt/soma/init/odoo /etc/init.d/
-
-sudo chmod +x /etc/init.d/odoo
-
-sudo update-rc.d odoo defaults
+sudo update-rc.d soma defaults
 
 if [ ! -d /opt/soma/log ];
 then
     mkdir /opt/soma/log
 fi
 
-sudo service odoo start
+sudo service soma start

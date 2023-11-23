@@ -1,8 +1,8 @@
 [submodule "odoo"]
 	path = odoo
 	url = https://github.com/odoo/odoo.git
-	branch = 14.0
-[submodule "custom-addons/l10n-brazil"]
-	path = custom-addons/l10n-brazil
-	url = https://github.com/OCA/l10n-brazil.git
-	branch = 14.0
+	branch = 17.0
+[submodule "custom-addons/odoo-modules"]
+	path = custom-addons/odoo-modules
+	url = https://github.com/muk-it/odoo-modules.git
+	branch = 17.0
