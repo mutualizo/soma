@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ### BEGIN INIT INFO
-# Provides:             odoo
+# Provides:             soma
 # Required-Start:       $remote_fs $syslog
 # Required-Stop:        $remote_fs $syslog
 # Should-Start:         $network
@@ -14,11 +14,11 @@
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/opt/soma/odoo/odoo-bin
-NAME=odoo
-DESC="odoo by soma"
-CONFIG=/opt/soma/init/odoo.conf
-LOGFILE=/opt/soma/log/odoo.log
-USER=ubuntu
+NAME=soma
+DESC="SOMA BY MUTUALIZO"
+CONFIG=/opt/soma/init/soma.conf
+LOGFILE=/opt/soma/log/soma.log
+USER=soma
 PIDFILE=/var/run/${NAME}.pid
 
 test -x ${DAEMON} || exit 0
