@@ -30,8 +30,6 @@ sudo cp /opt/soma/init/soma /etc/init.d/
 
 sudo chmod +x /etc/init.d/soma
 
-sudo update-rc.d soma defaults
-
 if [ ! -d /opt/soma/log ];
 then
     mkdir /opt/soma/log
