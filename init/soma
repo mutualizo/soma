@@ -18,7 +18,7 @@ NAME=soma
 DESC="SOMA BY MUTUALIZO"
 CONFIG=/opt/soma/init/soma.conf
 LOGFILE=/opt/soma/log/soma.log
-USER=soma
+USER=ubuntu
 PIDFILE=/var/run/${NAME}.pid
 
 test -x ${DAEMON} || exit 0
