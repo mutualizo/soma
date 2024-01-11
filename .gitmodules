@@ -6,3 +6,10 @@
 	path = custom-addons/odoo-modules
 	url = https://github.com/muk-it/odoo-modules.git
 	branch = 17.0
+[submodule "custom-addons/cybroaddons"]
+	path = custom-addons/cybroaddons
+	url = https://github.com/CybroOdoo/CybroAddons.git
+	branch = 17.0
+[submodule "custom-addons/MutualizoAddons"]
+	path = custom-addons/MutualizoAddons
+	url = https://github.com/mutualizo/MutualizoAddons.git
