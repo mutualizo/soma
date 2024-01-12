@@ -15,9 +15,8 @@
 |
 <b><a href="#Observações">Observações</a></b>
 |
-<br/>
 <b><a href="#Licença">Licença</a></b>
-<br/>
+<br>
 ============================================
 </p>
 
