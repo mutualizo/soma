@@ -35,4 +35,4 @@ then
     mkdir /opt/soma/log
 fi
 
-sudo service soma start
+sudo service soma status
