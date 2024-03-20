@@ -1,25 +1,15 @@
-# Soma
+<h1 align="center">SOMA</h1>
 
-Fazer o clone no diretório /opt
+<p align="center">
+<b><a href="#Licença">Licença</a></b>
+<br>
+============================================
+</p>
 
-Adicionar usuário aos sudoers
+## Licença
 
-usermod -aG sudo
+Este projeto é de propriedade da Mutualizo.
 
-Rodar Instalação (não rodar o script como root (sudo)):
-./opt/soma/soma.sh
-
-Caso não seja possível a execução de permissão para o arquivo:
-chmod 777 /opt/soma/soma.sh
-
-Depois mudar o grupo e o usuário propretário
-
-sudo service odoo status
-
-Em /opt/soma/odoo:
-./odoo-bin --config=/opt/soma/init/odoo.conf
-
-sudo su postgres
-psql
-alter user postgres with password '123';
-criar o Usuário odoo no banco pelo administrador (dbeaver)
+<p align="center">
+<a name="top" href="https://www.mutualizo.com.br/"><img src="https://github.com/mutualizo/soma/blob/Master/icon.png" width="250"></a>
+</p>
