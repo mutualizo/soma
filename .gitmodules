@@ -12,5 +12,5 @@
 	branch = 17.0
 [submodule "custom-addons/MutualizoAddons"]
 	path = custom-addons/MutualizoAddons
-	url = https://github.com/mutualizo/MutualizoAddons.git
+	url = git@github.com:mutualizo/MutualizoAddons.git
 	branch = Master
