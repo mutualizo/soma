@@ -17,7 +17,6 @@
 |
 <b><a href="#Licença">Licença</a></b>
 <br>
-============================================
 </p>
 
 # Introdução - Tutorial Instalação para Desenvolvedores
