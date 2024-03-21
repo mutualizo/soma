@@ -24,6 +24,8 @@ pip3 install wheel
 
 pip3 install -r /opt/soma/odoo/requirements.txt
 
+pip3 install -r /opt/soma/custom-addons/MutualizoAddons/localization/requirements.txt
+
 sudo cp /opt/soma/init/soma /etc/init.d/
 
 sudo chmod +x /etc/init.d/soma
