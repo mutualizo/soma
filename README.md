@@ -3,7 +3,6 @@
 <p align="center">
 <b><a href="#Licença">Licença</a></b>
 <br>
-============================================
 </p>
 
 ## Licença
