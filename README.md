@@ -26,98 +26,98 @@ Para que funcione corretamente, é necessário estar em um sistema operacional U
 
 # Pré-requisitos - Usuário do Ubuntu
 
-* Criar Usuário "soma" no Ubuntu. 
+* #### Criar Usuário "soma" no Ubuntu. 
 
 Seguir o Seguinte Tutorial de Criação de Usuário: [Como criar um novo usuário no Ubuntu 22.04](https://pt.linux-console.net/?p=15024)
 
 Observação: É necessário que o usuário seja criado com o nome "soma" (A senha está a seu critério) e seja criado como Administrador do sistema.
 
-* Criar chave ssh no Github com seu usuário da Mutualizo.
+* #### Criar chave ssh no Github com seu usuário da Mutualizo.
 
 # Clone - Baixar o código do Soma
 
-* De permissão para o seu usuário "soma" no diretório /opt:
+* #### De permissão para o seu usuário "soma" no diretório /opt:
 
 
-    sudo chmod soma:soma /opt
+```sudo chmod soma:soma /opt```
 
-* em seguida entre no diretório /opt e baixe o repositório do soma:
+* #### em seguida entre no diretório /opt e baixe o repositório do soma:
 
 
-    cd /opt
+```cd /opt```
 
-    git clone git@github.com:mutualizo/soma.git
+```git clone git@github.com:mutualizo/soma.git```
 
 # Instalação - Instalar o Soma
 
-* Dentro do diretório /opt/soma, execute o comando para tornar os arquivos executaveis:
+* #### Dentro do diretório /opt/soma, execute o comando para tornar os arquivos executaveis:
 
 
-    chmod 775 soma.sh diagrams.sh   
+```chmod 775 soma.sh diagrams.sh```  
 
-* Em seguida é só instalar o Soma, com o comando a seguir:
+* #### Em seguida é só instalar o Soma, com o comando a seguir:
 
 
-    ./soma.sh
+```./soma.sh```
 
-* O comando para Instalar o Soma deve ser executado sem a necessidade do "sudo" (root), caso você não consiga rodar sem o "sudo", algo está errado, revise os pré-requisitos.
+* #### O comando para Instalar o Soma deve ser executado sem a necessidade do "sudo" (root), caso você não consiga rodar sem o "sudo", algo está errado, revise os pré-requisitos.
 
 # Postgresql - Criar Usuário no Postgresql
 
-* Para Criar um usuário no banco de dados é necessário definir uma senha para seu usuário "postgres" (A senha está a seu critério), para isso execute:
+* #### Para Criar um usuário no banco de dados é necessário definir uma senha para seu usuário "postgres" (A senha está a seu critério), para isso execute:
 
     
-    sudo su postgres
+```sudo su postgres```
 
-    psql 
+```psql ```
 
-    alter user postgres with password '123';
+```alter user postgres with password '123';```
 
-    Acessar o pgadmin com o usuário postgres e criar um usuário para o Odoo por lá
+#### Para finalizar o processo de definição de senha é necessário acessar o pgadmin com o usuário postgres e criar um usuário para o Odoo por lá
 
-* É necessário que o serviço do postgresql seja reiniciado, para isso execute:
+* #### Reiniciar o serviço do postgresql, para isso execute:
 
 
-    sudo service postgresql restart
+```sudo service postgresql restart```
 
-* Abra seu DBeaver (Administrador de Banco de Dados), acesse o localhost com seu usuário postgres e a senha escolhida.
+* #### Abra seu DBeaver (Administrador de Banco de Dados), acesse o localhost com seu usuário postgres e a senha escolhida.
 
-* Crie um usuário "soma", e com a senha "soma". É de obrigatório que tenha todos os privilégios, ou seja, na criação do usuário é preciso marcar todos os "checkbox" de permissionamento.
+* #### Crie um usuário "soma", e com a senha "soma". É de obrigatório que tenha todos os privilégios, ou seja, na criação do usuário é preciso marcar todos os "checkbox" de permissionamento.
 
 # Executar - Executar o Soma
 
-* Para executar o soma basta executar um start no serviço, segue o comando:
+* #### Para executar o soma basta executar um start no serviço, segue o comando:
 
 
-    sudo service soma start
+```sudo service soma start```
 
 # Observações:
 
-* Consulte o log em soma/log/soma.log, segue o comando para acompanhar o log:
+* #### Consulte o log em soma/log/soma.log, segue o comando para acompanhar o log:
 
     
-    tail -f log/soma.log
+```tail -f log/soma.log```
 
-* Para executar o soma de forma manual e acompanhar o log em execução, primeiro é necessário garantir que o serviço não esteja iniciado, então ganta isso com o seguinte comando:
+* #### Para executar o soma de forma manual e acompanhar o log em execução, primeiro é necessário garantir que o serviço não esteja iniciado, então ganta isso com o seguinte comando:
 
 
-    sudo service soma stop
+```sudo service soma stop```
 
-Em seguida dentro do diretório odoo (soma/odoo/), execute o seguinte comando:
+#### Em seguida dentro do diretório odoo (soma/odoo/), execute o seguinte comando:
   
 
-    ./odoo-bin --config=../init/soma.conf
+```./odoo-bin --config=../init/soma.conf```
 
-* Para Atualizar os Submódulos execute o init caso precise ou diretamente o update:
+* #### Para Atualizar os Submódulos execute o init caso precise ou diretamente o update:
 
 
-    git submodules init
+```git submodules init```
 
-    git submodule update --remote
+```git submodule update --remote```
 
-## Licença
+# Licença
 
-Este projeto é de propriedade da Mutualizo.
+### Este projeto é de propriedade da Mutualizo.
 
 <p align="center">
 <a name="top" href="https://www.mutualizo.com.br/"><img src="https://github.com/mutualizo/soma/blob/Develop/icon.png" width="250"></a>
