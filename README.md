@@ -46,7 +46,7 @@ Observação: É necessário que o usuário seja criado com o nome "soma" (A sen
 
 ```cd /opt```
 
-```git clone git@github.com:mutualizo/soma.git```
+```git clone --recurse-submodules git@github.com:mutualizo/soma.git```
 
 # Instalação - Instalar o Soma
 
@@ -108,12 +108,24 @@ Observação: É necessário que o usuário seja criado com o nome "soma" (A sen
 
 ```./odoo-bin --config=../init/soma.conf```
 
-* #### Para Atualizar os Submódulos execute o init caso precise ou diretamente o update:
+### Submódulos
+
+* #### Sincronizar estrutura de submódulos:
 
 
 ```git submodules init```
 
+* #### Para Atualizar os submódulos execute o update:
+
+
 ```git submodule update --remote```
+
+* #### Para trazer submódulos novos:
+
+
+```git submodule update --init --recursive```
+
+#### É necessário fazer o commit e push das atualizações dos submódulos para manter atualizado com o repositórios externos.
 
 # Licença
 
