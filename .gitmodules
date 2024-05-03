@@ -26,3 +26,7 @@
 	path = custom-addons/odoo
 	url = https://github.com/odoo/odoo.git
 	branch = 14.0
+[submodule "MutualizoAddons"]
+	path = custom-addons/MutualizoAddons
+	url = https://github.com/mutualizo/MutualizoAddons.git
+	branch = 14.0
