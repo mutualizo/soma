@@ -1,24 +1,4 @@
 [submodule "odoo"]
-	path = odoo
+	path = custom-addons/odoo
 	url = https://github.com/odoo/odoo.git
-	branch = 14.0
-[submodule "web-theme"]
-	path = custom-addons/web-theme
-	url = https://github.com/muk-it/muk_web.git
-	branch = 14.0
-[submodule "account-payment"]
-	path = custom-addons/account-payment
-	url = https://github.com/OCA/account-payment.git
-	branch = 14.0
-[submodule "bank-payment"]
-	path = custom-addons/bank-payment
-	url = https://github.com/OCA/bank-payment.git
-	branch = 14.0
-[submodule "account-reconcile"]
-	path = custom-addons/account-reconcile
-	url = https://github.com/OCA/account-reconcile.git
-	branch = 14.0
-[submodule "MutualizoAddons"]
-	path = custom-addons/MutualizoAddons
-	url = git@github.com:mutualizo/MutualizoAddons.git
 	branch = 14.0
