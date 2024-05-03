@@ -22,9 +22,9 @@ rm -rfv /opt/soma/wkhtmltox*
 
 pip3 install wheel
 
-pip3 install -r /opt/soma/odoo/requirements.txt
+pip3 install -r /opt/soma/custom-addons/odoo/requirements.txt
 
-pip3 install -r /opt/soma/custom-addons/MutualizoAddons/localization/requirements.txt
+pip3 install -r /opt/soma/custom-addons/l10n-brazil/requirements.txt
 
 sudo cp /opt/soma/init/soma /etc/init.d/
 
