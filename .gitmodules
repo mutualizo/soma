@@ -1,3 +1,27 @@
+[submodule "bank-payment"]
+	path = custom-addons/bank-payment
+	url = https://github.com/OCA/bank-payment.git
+	branch = 14.0
+[submodule "account-payment"]
+	path = custom-addons/account-payment
+	url = https://github.com/OCA/account-payment.git
+	branch = 14.0
+[submodule "account-reconcile"]
+	path = custom-addons/account-reconcile
+	url = https://github.com/OCA/account-reconcile.git
+	branch = 14.0
+[submodule "l10n-brazil"]
+	path = custom-addons/l10n-brazil
+	url = https://github.com/OCA/l10n-brazil.git
+	branch = 14.0
+[submodule "muk_web"]
+	path = custom-addons/muk_web
+	url = https://github.com/muk-it/muk_web.git
+	branch = 14.0
+[submodule "cybroaddons"]
+	path = custom-addons/cybroaddons
+	url = https://github.com/CybroOdoo/CybroAddons.git
+	branch = 14.0
 [submodule "odoo"]
 	path = custom-addons/odoo
 	url = https://github.com/odoo/odoo.git
