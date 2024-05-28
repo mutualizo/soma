@@ -29,4 +29,4 @@
 [submodule "MutualizoAddons"]
 	path = custom-addons/MutualizoAddons
 	url = https://github.com/mutualizo/MutualizoAddons.git
-	branch = 14.0
+	branch = 14.0_staging
