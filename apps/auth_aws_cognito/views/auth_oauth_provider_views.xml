@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--This is used to add the secret field in the oauth provider-->
+    <record id="view_oauth_provider_form" model="ir.ui.view">
+        <field name="name">
+            auth.oauth.provider.view.form.inherit.aws.cognito.sso.integration
+        </field>
+        <field name="model">auth.oauth.provider</field>
+        <field name="inherit_id" ref="auth_oauth.view_oauth_provider_form"/>
+        <field name="arch" type="xml">
+            <field name="validation_endpoint" position="after">
+                <field name="cognito_response_type" invisible="1"/>
+                <field name="cognito_aws_region" />
+                <field name="cognito_user_pool_id" />
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,4 +1,6 @@
 # Byte-compiled / optimized / DLL files
+logger/__pycache__/
+logger/*/__pycache__/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -9,3 +11,9 @@ __pycache__/
 *~
 log/*
 soma.sh
+
+#Eclipse
+.project
+.pydevproject
+.settings
+

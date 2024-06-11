@@ -1,0 +1,12 @@
+<odoo>
+    <record id="l10n_br_cnab_return_log_form_view_inherit" model="ir.ui.view">
+        <field name="name">l10n_br_cnab.return.log.form.view.inherit</field>
+        <field name="model">l10n_br_cnab.return.log</field>
+        <field name="inherit_id" ref="l10n_br_account_payment_order.l10n_br_cnab_return_log_form_view"/>
+        <field name="arch" type="xml">
+            <field name="bank_account_id" position="after">
+                <field name="company_id" readonly="1" groups="base.group_multi_company"/>
+            </field>
+        </field>
+    </record>
+</odoo>

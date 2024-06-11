@@ -1,0 +1,7 @@
+    <odoo>
+        <record id="l10n_br_cnab_return_log_rule_multicompany" model="ir.rule">
+            <field name="name">CNAB Return Log: multi company global rule</field>
+            <field name="model_id" ref="model_l10n_br_cnab_return_log"/>
+            <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+        </record>
+    </odoo>

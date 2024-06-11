@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="account_move_form_inherit">
+        <field name="name">account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='payment_move_line_tab']" position="after">
+                <page string="Contract Info" name="tab_contract_info" attrs="{'invisible': [('move_type', '!=', 'out_invoice')]}">
+                    <group>
+                        <group>
+                            <field name="contract_number"/>
+                            <field name="total_installments"/>
+                            <field name="installment_number"/>
+                            <field name="installment_uid"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_invoice_tree_inherit">
+        <field name="name">account.invoice.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree" />
+        <field name="arch" type="xml">
+            <field name="invoice_partner_display_name" position="after">
+                <field name="contract_number"/>
+            </field>
+            <field name="payment_state" position="replace">
+                <field name="payment_state" widget="badge"
+                decoration-danger="payment_state == 'not_paid'" decoration-warning="payment_state in ('partial', 'in_payment')"
+                decoration-success="payment_state in ('paid', 'reversed')"
+                invisible="context.get('default_move_type') == 'out_invoice'"/>
+                <field name="bank_slip_status" widget="badge"
+                    decoration-muted="bank_slip_status == 'bank_slip_not_issued'" 
+                    decoration-info="bank_slip_status == 'bank_slip_issued'"
+                    decoration-danger="bank_slip_status in ('bank_slip_error', 'bank_slip_canceled')"
+                    decoration-warning="bank_slip_status == 'bank_slip_registered'" 
+                    decoration-success="bank_slip_status == 'bank_slip_paid'"
+                    invisible="context.get('default_move_type') != 'out_invoice'"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter_inherit" model="ir.ui.view">
+        <field name="name">account.invoice.select.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="contract_number"/>
+            </field>
+            <xpath expr="//filter[@name='salesperson']" position="before">
+                <filter name="contractnumber" string="Contract Number" context="{'group_by': 'contract_number'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter_inherit" model="ir.ui.view">
+        <field name="name">account.invoice.select.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <filter name="myinvoices" position="after">
+                <separator/>
+                <filter name="bank_slip_not_issued" string="Boleto Não Emitido" domain="[('bank_slip_status', '=', 'bank_slip_not_issued')]" invisible="context.get('default_move_type') != 'out_invoice'"/>
+                <filter name="bank_slip_issued" string="Boleto Emitido" domain="[('bank_slip_status', '=', 'bank_slip_issued')]" invisible="context.get('default_move_type') != 'out_invoice'"/>
+                <filter name="bank_slip_error" string="Erro no Boleto" domain="[('bank_slip_status', '=', 'bank_slip_error')]" invisible="context.get('default_move_type') != 'out_invoice'"/>
+                <filter name="bank_slip_registered" string="Boleto Registrado" domain="[('bank_slip_status', '=', 'bank_slip_registered')]" invisible="context.get('default_move_type') != 'out_invoice'"/>
+                <filter name="bank_slip_paid" string="Boleto Pago" domain="[('bank_slip_status', '=', 'bank_slip_paid')]" invisible="context.get('default_move_type') != 'out_invoice'"/>
+                <filter name="bank_slip_canceled" string="Boleto Cancelado" domain="[('bank_slip_status', '=', 'bank_slip_canceled')]" invisible="context.get('default_move_type') != 'out_invoice'"/>
+            </filter>
+
+            <filter name="in_payment" position="attributes">
+                <attribute name="invisible">context.get('default_move_type') == 'out_invoice'</attribute>
+            </filter>
+            <filter name="partial" position="attributes">
+                <attribute name="invisible">context.get('default_move_type') == 'out_invoice'</attribute>
+            </filter>
+            <filter name="paid" position="attributes">
+                <attribute name="invisible">context.get('default_move_type') == 'out_invoice'</attribute>
+            </filter>
+            <filter name="unpaid" position="attributes">
+                <attribute name="invisible">context.get('default_move_type') == 'out_invoice'</attribute>
+            </filter>
+            <filter name="reversed" position="attributes">
+                <attribute name="invisible">context.get('default_move_type') == 'out_invoice'</attribute>
+            </filter>
+            <filter name="late" position="attributes">
+                <attribute name="invisible">context.get('default_move_type') == 'out_invoice'</attribute>
+            </filter>
+        </field>
+    </record>
+
+</odoo>

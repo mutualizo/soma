@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="cnab_return_log_financial_api">
+        <field name="name">cnab.return.log.financial.api</field>
+        <field name="model">l10n_br_cnab.return.log</field>
+        <field name="inherit_id" ref="l10n_br_account_payment_order.l10n_br_cnab_return_log_form_view" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="financial_logs" string="Notificações Enviadas" groups="base.group_erp_manager">
+                    <button
+                        name="send_cnab_return_callbacks"
+                        string="Reenviar Notificações"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <field name="financial_log_ids" readonly="1" nolabel="1">
+                        <tree>
+                            <field name="cnab_return_id" invisible="1" />
+                            <field name="payload" />
+                            <field name="success" />
+                            <field name="error" />
+                            <field name="create_date" />
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

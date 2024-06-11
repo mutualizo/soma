@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Creating the AWS Cognito auth provider -->
+    <data noupdate="1">
+        <record id="provider_aws_cognito" model="auth.oauth.provider">
+            <field name="name">AWS Cognito</field>
+            <field name="client_id">2l62n8b9i8ejhohrmfpfbigj5j</field>
+            <field name="auth_endpoint">https://auth-stg.mutualizo.com.br/login</field>
+            <field name="scope">aws.cognito.signin.user.admin email openid phone profile</field>
+            <field name="validation_endpoint">https://auth-stg.mutualizo.com.br/oauth2/userInfo</field>
+            <field name="css_class">fa fa-fw fa-amazon</field>
+            <field name="body">Log in with Cognito</field>
+            <field name="cognito_response_type">token</field>
+            <field name="cognito_aws_region">us-east-1</field>
+            <field name="cognito_user_pool_id">us-east-1_QWi225cTs</field>
+            <field name="data_endpoint"></field>
+            <field name="enabled">True</field>
+        </record>
+    </data>
+</odoo>
